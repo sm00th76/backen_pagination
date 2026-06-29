@@ -1,5 +1,3 @@
-Here's a polished **GitHub README** for your **Product Browser API**. It follows the standard GitHub project documentation format with clear sections, examples, and testing instructions.
-
 # Product Browser API
 
 A RESTful Product Browser API built with **Node.js**, **Express.js**, and **MongoDB** that provides **cursor-based pagination**, **snapshot consistency**, and **category-based filtering** for efficient browsing of large product catalogs.
