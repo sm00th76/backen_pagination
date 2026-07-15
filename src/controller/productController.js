@@ -20,6 +20,7 @@ const getProducts = async (req, res) => {
         const filter = { updatedAt: { $lte: snapshotTime } };
         if (category) filter.category = category;
 
+        
         // cursor filter: pick up from where last page left off
         if (cursorUpdatedAt && cursorId) {
             filter.$or = [

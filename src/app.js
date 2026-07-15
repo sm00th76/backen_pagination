@@ -13,7 +13,7 @@ app.get('/',(req,res)=>{
 
 app.use('/api/products',productRouter)
 
-app.listen(process.env.PORT,(req,res)=>{
+app.listen(process.env.PORT,'0.0.0.0',(req,res)=>{
 	console.log(`listening at ${process.env.PORT}`)
 })
 

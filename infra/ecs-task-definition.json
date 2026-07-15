@@ -1,0 +1,36 @@
+{
+  "family": "pagi-backend",
+  "networkMode": "awsvpc",
+  "executionRoleArn": "arn:aws:iam::379245767653:role/ecsTaskExecutionRole",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "512",
+  "memory": "2048",
+  "containerDefinitions": [
+    {
+      "name": "epress-server",
+      "image": "379245767653.dkr.ecr.ap-south-1.amazonaws.com/pagination-backend:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 5000,
+          "hostPort": 5000,
+          "protocol": "tcp",
+          "name": "port-backend",
+          "appProtocol": "http"
+        }
+      ],
+      "environment": [
+        {
+          "name": "PORT",
+          "value": "5000"
+        },
+        {
+          "name": "MONGO_URI",
+          "value": "REPLACE_AT_DEPLOY_TIME"
+        }
+      ]
+    }
+  ]
+}
