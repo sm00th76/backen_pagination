@@ -8,9 +8,12 @@ const app = express()
 app.use(express.json())
 
 app.get('/',(req,res)=>{
-	res.status(200).json({msg:{"status":"good"}})
+	res.status(200).json({msg:{"status":"Welcome to the Product API"}})
 })
 
+app.get('/health',(req,res)=>{
+	res.status(200).json({"status" : "healthy"})
+})
 app.use('/api/products',productRouter)
 
 app.listen(process.env.PORT,'0.0.0.0',(req,res)=>{
